@@ -1,1 +1,1 @@
-bundle exec shotgun -p 3001
+ruby app.rb

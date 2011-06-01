@@ -1,24 +1,11 @@
+require 'rubygems'
+require 'bundler/setup'
+require 'sinatra'
+
 begin
-  require ::File.expand_path('.bundle/environment', __FILE__)
-rescue LoadError
-  require 'rubygems'
-  require 'bundler'
-  Bundler.setup
+  require_relative 'app.rb'
+rescue NameError
+  require "#{File.dirname(__FILE__)}/app.rb"
 end
 
-require 'sinatra/base'
-require 'haml'
-require 'sass/plugin/rack'
-
-use Sass::Plugin::Rack
-
-class App < Sinatra::Base
-
-  get '/' do
-    haml :index
-  end
-  
-end
-
-use Rack::Static, :urls => ["/stylesheets", "/images", "/js", "/swfs"], :root => "public"
-run App
+run Sinatra::Application

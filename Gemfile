@@ -1,8 +1,8 @@
 source :rubygems
 
-gem 'sinatra', '1.0'
-gem 'haml'
-
-group :development do
-  gem 'shotgun'
-end
+gem "haml"
+gem "json"
+gem "coffee-script-source"
+gem "coffee-script"
+gem "therubyracer-heroku"
+gem "sinatra", ">= 1.1.2"
