@@ -7,6 +7,8 @@ GEM
     haml (3.0.25)
     json (1.5.1)
     rack (1.2.1)
+    shotgun (0.8)
+      rack (>= 1.0)
     sinatra (1.2.6)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
@@ -21,5 +23,6 @@ DEPENDENCIES
   coffee-script-source
   haml
   json
+  shotgun
   sinatra (>= 1.1.2)
   therubyracer-heroku
