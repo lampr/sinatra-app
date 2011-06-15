@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'sinatra'
 
 begin
-  require_relative 'app.rb'
+  require "./app"
 rescue NameError
   require "#{File.dirname(__FILE__)}/app.rb"
 end
