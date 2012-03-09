@@ -1,14 +1,20 @@
 require 'sinatra'
+require 'haml'
 require 'cgi'
 require 'net/http'
 require 'image_size'
 require 'base64'
 require 'json'
+require 'sass/plugin/rack'
 
+use Sass::Plugin::Rack
+
+# Display home
 get '/' do
-  'Hej'
+  haml :index
 end
 
+# Wave64 endpoint
 get '/w*' do
   # Set Content/Type as JSON
   content_type :json
