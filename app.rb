@@ -1,18 +1,18 @@
 require 'sinatra'
-require 'haml'
+# require 'haml'
 require 'cgi'
-require 'net/http'
+require 'net/https'
 require 'image_size'
 require 'base64'
 require 'json'
-require 'sass/plugin/rack'
-
-use Sass::Plugin::Rack
-
-# Display home
-get '/' do
-  haml :index
-end
+# require 'sass/plugin/rack'
+# 
+# use Sass::Plugin::Rack
+# 
+# # Display home
+# get '/' do
+#   haml :index
+# end
 
 # Wave64 endpoint
 get '/w*' do
@@ -21,6 +21,8 @@ get '/w*' do
   
   # Get the unescaped URL
   url = CGI::unescape(params[:url])
+  url = url.sub('https', 'http')
+  puts url
   
   # Get the image from URL
   image = Net::HTTP.get_response(URI.parse(url)).body
