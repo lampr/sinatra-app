@@ -1,18 +1,18 @@
 require 'sinatra'
-# require 'haml'
+require 'haml'
 require 'cgi'
 require 'net/https'
 require 'image_size'
 require 'base64'
 require 'json'
-# require 'sass/plugin/rack'
-# 
-# use Sass::Plugin::Rack
-# 
-# # Display home
-# get '/' do
-#   haml :index
-# end
+require 'sass/plugin/rack'
+
+use Sass::Plugin::Rack
+
+# Display home
+get '/' do
+  haml :index
+end
 
 # Wave64 endpoint
 get '/w*' do
